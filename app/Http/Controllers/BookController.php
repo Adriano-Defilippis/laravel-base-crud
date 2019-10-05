@@ -16,9 +16,9 @@ class BookController extends Controller
     {
 
         $name_table = "Books";
-        $books = Book::all();
+        $values = Book::all();
 
-        return view('books_index', compact('books', 'name_table'));
+        return view('books_index', compact('values', 'name_table'));
     }
 
     /**
@@ -28,7 +28,9 @@ class BookController extends Controller
      */
     public function create()
     {
-        //
+        $name_table = "Books";
+        $values = Book::all();
+        return view('elements.form_table_create', compact('values', 'name_table'));
     }
 
     /**
@@ -39,7 +41,15 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $validatedData = $request->validate([
+        "title" => "required",
+        "description" => "required",
+        "author" => "required"
+      ]);
+
+      $book = Book::create($validatedData);
+
+      return redirect('/');
     }
 
     /**

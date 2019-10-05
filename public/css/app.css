@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   font-family: Nunito;
 }
 
@@ -9,6 +10,47 @@ header {
   color: white;
   padding: 20px;
   text-align: center;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  height: auto;
+  padding: 10px;
+}
+
+.container::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.container .wrapper-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.container .wrapper-box::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.container .wrapper-box .box {
+  font-size: 1.2em;
+  width: calc(100% / 3 - 20px);
+  padding: 10px;
+  margin-bottom: 10px;
+  color: white;
+  background-color: lightblue;
+  border-radius: 10px;
+}
+
+.container .wrapper-box .box span {
+  font-weight: bolder;
 }
 
 footer {

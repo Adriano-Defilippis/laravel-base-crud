@@ -16,20 +16,13 @@
     </head>
     <body>
         <header>
-          <h2>Header {{ $name_table }}</h2>
+          <h2>Header {{ $name_table }} </h2>
         </header>
 
 
         <div class="container">
 
-
-          <aside class="">
-
-          </aside>
-
-
           @yield('content')
-
 
         </div>
 

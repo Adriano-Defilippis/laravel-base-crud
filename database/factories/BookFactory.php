@@ -8,7 +8,7 @@ use App\Book;
 
 $factory->define(Book::class, function (Faker $faker) {
     return [
-      "title" => $faker-> sentence,
+      "title" => $faker-> sentence(6),
       "description" => $faker-> paragraph,
       "author" => $faker-> name
     ];
