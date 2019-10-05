@@ -14,7 +14,11 @@ class BookController extends Controller
      */
     public function index()
     {
-        return view('welcome');
+
+        $name_table = "Books";
+        $books = Book::all();
+
+        return view('books_index', compact('books', 'name_table'));
     }
 
     /**
