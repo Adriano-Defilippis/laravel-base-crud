@@ -15,7 +15,7 @@ header {
 .container {
   display: flex;
   width: 100%;
-  height: auto;
+  height: calc(100% - 115px);
   padding: 10px;
 }
 
@@ -72,6 +72,21 @@ header {
 
 .container .wrapper-box .box span {
   font-weight: bolder;
+}
+
+form {
+  width: 80%;
+  height: calc(100vh - 135px);
+  margin: 0 auto;
+}
+
+form label {
+  width: 100%;
+}
+
+form input {
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 footer {
