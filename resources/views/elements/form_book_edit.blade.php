@@ -2,7 +2,7 @@
 @section('content')
 
   {{-- @dd($value); --}}
-
+  <a href="{{ route('book.index') }}">BACK</a>
   <form class="" action="{{ route('book.update', $value -> id) }}" method="post">
     @csrf
       @method('POST')

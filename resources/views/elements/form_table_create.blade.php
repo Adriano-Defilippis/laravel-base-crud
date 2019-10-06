@@ -1,5 +1,6 @@
 @extends('layout_folder.index_layout')
 @section('content')
+  <a href="{{ route('book.index') }}">BACK</a>
   <form class="" action="{{ route('book.store') }}" method="post">
     @csrf
       @method('POST')

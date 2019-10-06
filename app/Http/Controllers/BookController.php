@@ -104,6 +104,7 @@ class BookController extends Controller
      */
     public function destroy($id)
     {
+
       Book::whereId($id) -> delete();
       return redirect('/');
     }
