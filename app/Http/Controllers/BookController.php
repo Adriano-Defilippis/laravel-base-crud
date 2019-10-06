@@ -60,7 +60,7 @@ class BookController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -71,7 +71,10 @@ class BookController extends Controller
      */
     public function edit($id)
     {
-        //
+      $name_table = "Books";
+      $value = Book::findOrFail($id);
+
+        return view('elements.form_book_edit', compact('value', 'name_table'));
     }
 
     /**
@@ -83,7 +86,14 @@ class BookController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $validatedData = $request->validate([
+        "title" => "required",
+        "description" => "required",
+        "author" => "required"
+      ]);
+
+        Book::whereId($id) -> update($validatedData);
+        return redirect('/');
     }
 
     /**
@@ -94,6 +104,7 @@ class BookController extends Controller
      */
     public function destroy($id)
     {
-        //
+      Book::whereId($id) -> delete();
+      return redirect('/');
     }
 }

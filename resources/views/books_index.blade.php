@@ -15,7 +15,11 @@
           <span>Description:</span>
           <p> {{ $value -> description }} </p>
           <span>Author:</span>
-          <p> {{ $value -> author }} </p>
+          <p> {{ $value -> author }} </p><br>
+          <div class="actions">
+            <a href="{{ route('book.edit', $value -> id) }}">EDIT</a>
+            <a href="{{ route('book.destroy', $value -> id) }}">DELETE</a>
+          </div>
         </div>
       @endforeach
 

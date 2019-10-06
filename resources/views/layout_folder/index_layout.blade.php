@@ -16,7 +16,7 @@
     </head>
     <body>
         <header>
-          <h2>Header {{ $name_table }} </h2>
+          <h2>Header {{ $name_table }}</h2>
         </header>
 
 
